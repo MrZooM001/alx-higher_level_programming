@@ -1,3 +1,1 @@
-Projects of **alx-higher_level_programming**
-**Scope**
-Python Language
+Projects of **0x00. Python - Hello, World**
