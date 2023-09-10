@@ -1,9 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include <Python.h>
-#include <listobject.h>
-#include <object.h>
 #include "lists.h"
 
 /**
@@ -18,7 +15,7 @@ PyListObject *py_list;
 PyObject *object;
 Py_ssize_t i;
 
-py_list = (PyListObject *) p;
+py_list = (PyListObject *)p;
 printf("[*] Size of the Python List = %d\n", (int)Py_SIZE(py_list));
 printf("[*] Allocated = %d\n", (int)py_list->allocated);
 i = 0;

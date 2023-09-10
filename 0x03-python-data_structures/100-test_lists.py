@@ -1,4 +1,3 @@
-#!/usr/bin/python
 import ctypes
 
 lib = ctypes.CDLL('./libPyList.so')
