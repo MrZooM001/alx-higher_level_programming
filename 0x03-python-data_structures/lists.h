@@ -22,6 +22,4 @@ void free_listint(listint_t *head);
 listint_t *reverse_list(listint_t *head);
 int is_palindrome(listint_t **head);
 
-void print_python_list_info(PyObject *p);
-
 #endif

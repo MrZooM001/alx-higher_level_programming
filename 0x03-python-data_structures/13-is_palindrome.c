@@ -36,7 +36,6 @@ return (previous_node);
 int is_palindrome(listint_t **head)
 {
 listint_t *start, *end, *middle, *previous_start, *first_half, *second_half;
-int is_palindrome;
 
 start = *head, end = *head;
 previous_start = NULL, middle = NULL;
