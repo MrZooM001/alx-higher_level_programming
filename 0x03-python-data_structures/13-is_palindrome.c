@@ -12,44 +12,44 @@
  */
 int is_palindrome(listint_t **head)
 {
-listint_t *start, *end, *middle, *previous_start, *first_half, *second_half;
+listint_t *start, *end, *middle, *previous_start, *frst_half, *scnd_half, *tmp;
 int is_palindrome;
 
 start = *head, end = *head;
 previous_start = NULL, middle = NULL;
-first_half = *head, is_palindrome = 1;
+frst_half = *head, is_palindrome = 1;
 if (*head == NULL || (*head)->next == NULL)
 return (1);
 
 while (end != NULL && end->next != NULL)
 {
 end = end->next->next;
-listint_t *temp = start->next;
+tmp = start->next;
 start->next = previous_start;
-previous_start = start, start = temp;
+previous_start = start, start = tmp;
 }
 if (end != NULL)
 middle = start, start = start->next;
-second_half = start, first_half = previous_start;
-while (second_half != NULL)
+scnd_half = start, frst_half = previous_start;
+while (scnd_half != NULL)
 {
-if (first_half->n != second_half->n)
+if (frst_half->n != scnd_half->n)
 {
 is_palindrome = 0;
 break;
 }
-first_half = first_half->next, second_half = second_half->next;
+frst_half = frst_half->next, scnd_half = scnd_half->next;
 }
 previous_start = NULL;
-while (first_half != NULL)
+while (frst_half != NULL)
 {
-listint_t *temp = first_half->next;
-first_half->next = previous_start;
-previous_start = first_half, first_half = temp;
+tmp = frst_half->next;
+frst_half->next = previous_start;
+previous_start = frst_half, frst_half = tmp;
 }
 if (middle != NULL)
 {
-previous_start = middle, middle->next = second_half;
+previous_start = middle, middle->next = scnd_half;
 }
 return (is_palindrome);
 }
