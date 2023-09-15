@@ -40,9 +40,10 @@ int is_palindrome;
 
 start = *head, end = *head;
 previous_start = NULL, middle = NULL;
-is_palindrome = 1;
+first_half = *head;
 if (*head == NULL || (*head)->next == NULL)
 return (1);
+
 while (end != NULL && end->next != NULL)
 {
 end = end->next->next;
@@ -55,17 +56,15 @@ middle = start;
 start = start->next;
 }
 second_half = reverse_list(start);
-first_half = *head;
 while (second_half != NULL)
 {
 if (first_half->n != second_half->n)
-{
-is_palindrome = 0;
-break;
-}
+return (0);
+
 first_half = first_half->next;
 second_half = second_half->next;
 }
+
 reverse_list(second_half);
 if (middle != NULL)
 {
@@ -74,5 +73,6 @@ middle->next = second_half;
 }
 else
 previous_start->next = second_half;
-return (is_palindrome);
+
+return (1);
 }
