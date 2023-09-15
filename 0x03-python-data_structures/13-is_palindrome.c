@@ -26,16 +26,11 @@ while (end != NULL && end->next != NULL)
 end = end->next->next;
 listint_t *temp = start->next;
 start->next = previous_start;
-previous_start = start;
-start = temp;
+previous_start = start, start = temp;
 }
 if (end != NULL)
-{
-middle = start;
-start = start->next;
-}
-second_half = start;
-first_half = previous_start;
+middle = start, start = start->next;
+second_half = start, first_half = previous_start;
 while (second_half != NULL)
 {
 if (first_half->n != second_half->n)
@@ -43,22 +38,18 @@ if (first_half->n != second_half->n)
 is_palindrome = 0;
 break;
 }
-first_half = first_half->next;
-second_half = second_half->next;
+first_half = first_half->next, second_half = second_half->next;
 }
 previous_start = NULL;
 while (first_half != NULL)
 {
 listint_t *temp = first_half->next;
 first_half->next = previous_start;
-previous_start = first_half;
-first_half = temp;
+previous_start = first_half, first_half = temp;
 }
 if (middle != NULL)
 {
-previous_start = middle;
-middle->next = second_half;
+previous_start = middle, middle->next = second_half;
 }
-
 return (is_palindrome);
 }
