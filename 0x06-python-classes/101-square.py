@@ -10,16 +10,8 @@ class Square:
             size (int): represents size of square as int
             position (int): represents position of square as tuple"""
 
-        if type(size) is not int:
-            raise TypeError("size must be an integer")
-        elif size < 0:
-            raise ValueError("size must be >= 0")
-        elif (type(position[0]) is not int or position[0] < 0
-                or type(position[1]) is not int or position[1] < 0):
-            raise TypeError("position must be a tuple of 2 positive integers")
-        else:
-            self.__size = size
-            self.__position = position
+        self.__size = size
+        self.__position = position
 
     def area(self):
         """Get the area of the square"""
@@ -60,9 +52,22 @@ class Square:
     @position.setter
     def position(self, value):
         """Set a new position's values of the square"""
-        if (type(value) is not tuple or len(value) != 2
+        if (not isinstance(value, tuple) or len(value) != 2
                 or type(value[0]) is not int or value[0] < 0
                 or type(value[1]) is not int or value[1] < 0):
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
             self.__position = value
+
+    def __str__(self):
+        """Prints '#' as the representation of the square"""
+        sqr = ""
+        if self.__size == 0:
+            return sqr
+        else:
+            for j in range(self.__position[1]):
+                sqr += '\n'
+            for i in range(self.__size - 1):
+                sqr += (" " * self.__position[0]) + ("#" * self.__size + '\n')
+            sqr += (" " * self.__position[0]) + ("#" * self.__size)
+        return sqr
