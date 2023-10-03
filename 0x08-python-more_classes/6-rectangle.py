@@ -5,6 +5,8 @@
 class Rectangle:
     """Class that represents a rectangle."""
 
+    number_of_instances = 0
+
     def __init__(self, width=0, height=0):
         """Instantiate a new rectangle with default values of 0
 
@@ -23,6 +25,7 @@ class Rectangle:
         if height < 0:
             raise ValueError("height must be >= 0")
         self.__height = height
+        type(self).number_of_instances += 1
 
     @property
     def width(self):
@@ -78,3 +81,8 @@ class Rectangle:
         r = "{}({}, {})".format(self.__class__.__name__,
                                 self.width, self.height)
         return (r)
+
+    def __del__(self):
+        """Return a message when an instance of a class is deleted"""
+        print("Bye rectangle...")
+        type(self).number_of_instances -= 1

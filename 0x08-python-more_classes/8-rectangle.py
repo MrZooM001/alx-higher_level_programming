@@ -3,7 +3,15 @@
 
 
 class Rectangle:
-    """Class that represents a rectangle."""
+    """Class that represents a rectangle.
+
+    Args:
+        number_of_instances (int): number of instantiated instances
+        print_symbol (any): symbol for string representation
+    """
+
+    number_of_instances = 0
+    print_symbol = "#"
 
     def __init__(self, width=0, height=0):
         """Instantiate a new rectangle with default values of 0
@@ -23,6 +31,7 @@ class Rectangle:
         if height < 0:
             raise ValueError("height must be >= 0")
         self.__height = height
+        type(self).number_of_instances += 1
 
     @property
     def width(self):
@@ -67,7 +76,8 @@ class Rectangle:
 
         rect_symbol = []
         for i in range(self.__height):
-            [rect_symbol.append("#") for j in range(self.__width)]
+            [rect_symbol.append(str(self.print_symbol))
+             for j in range(self.__width)]
             if i != (self.__height - 1):
                 rect_symbol.append('\n')
         return "".join(rect_symbol)
@@ -78,3 +88,25 @@ class Rectangle:
         r = "{}({}, {})".format(self.__class__.__name__,
                                 self.width, self.height)
         return (r)
+
+    def __del__(self):
+        """Return a message when an instance of a class is deleted"""
+        print("Bye rectangle...")
+        type(self).number_of_instances -= 1
+
+    @staticmethod
+    def bigger_or_equal(rect_1, rect_2):
+        """Returns the biggest rectangle based on the area
+
+        Args:
+            rect_1 (object): an instance of Rectangle class
+            rect_2 (object): an instance of Rectangle class
+        """
+        if not isinstance(rect_1, Rectangle):
+            raise TypeError("rect_1 must be an instance of Rectangle")
+        if not isinstance(rect_2, Rectangle):
+            raise TypeError("rect_2 must be an instance of Rectangle")
+        if rect_1.area() >= rect_2.area():
+            return rect_1
+        elif rect_1.area() < rect_2.area():
+            return rect_2

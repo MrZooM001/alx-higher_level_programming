@@ -3,7 +3,15 @@
 
 
 class Rectangle:
-    """Class that represents a rectangle."""
+    """Class that represents a rectangle.
+
+    Args:
+        number_of_instances (int): number of instantiated instances
+        print_symbol (any): symbol for string representation
+    """
+
+    number_of_instances = 0
+    print_symbol = "#"
 
     def __init__(self, width=0, height=0):
         """Instantiate a new rectangle with default values of 0
@@ -23,6 +31,7 @@ class Rectangle:
         if height < 0:
             raise ValueError("height must be >= 0")
         self.__height = height
+        type(self).number_of_instances += 1
 
     @property
     def width(self):
@@ -67,7 +76,8 @@ class Rectangle:
 
         rect_symbol = []
         for i in range(self.__height):
-            [rect_symbol.append("#") for j in range(self.__width)]
+            [rect_symbol.append(str(self.print_symbol))
+             for j in range(self.__width)]
             if i != (self.__height - 1):
                 rect_symbol.append('\n')
         return "".join(rect_symbol)
@@ -78,3 +88,8 @@ class Rectangle:
         r = "{}({}, {})".format(self.__class__.__name__,
                                 self.width, self.height)
         return (r)
+
+    def __del__(self):
+        """Return a message when an instance of a class is deleted"""
+        print("Bye rectangle...")
+        type(self).number_of_instances -= 1

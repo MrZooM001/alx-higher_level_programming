@@ -78,3 +78,7 @@ class Rectangle:
         r = "{}({}, {})".format(self.__class__.__name__,
                                 self.width, self.height)
         return (r)
+
+    def __del__(self):
+        """Return a message when an instance of a class is deleted"""
+        print("Bye rectangle...")
