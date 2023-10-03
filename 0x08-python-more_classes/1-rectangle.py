@@ -4,11 +4,9 @@
 
 class Rectangle:
     """Class that represents a rectangle."""
-
-
     def __init__(self, width=0, height=0):
         """Instantiate a new rectangle with default values of 0
-        
+
         Args:
             width (int): rectangle's width
             height (int): rectangle's height

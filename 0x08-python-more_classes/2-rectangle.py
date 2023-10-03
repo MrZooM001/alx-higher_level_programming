@@ -4,11 +4,9 @@
 
 class Rectangle:
     """Class that represents a rectangle."""
-
-
     def __init__(self, width=0, height=0):
         """Instantiate a new rectangle with default values of 0
-        
+
         Args:
             width (int): rectangle's width
             height (int): rectangle's height
@@ -43,7 +41,7 @@ class Rectangle:
     def height(self):
         """Retrieve rectangle's height"""
         return self.__height
-    
+
     @height.setter
     def height(self, value):
         if not isinstance(value, int):
@@ -52,14 +50,10 @@ class Rectangle:
             raise ValueError("height must be >= 0")
         self.__height = value
 
-
     def area(self):
         """Returns the rectangle area"""
-        
         return self.__width * self.__height
-
 
     def perimeter(self):
         """Returns the rectangle perimeter"""
-        
         return (self.__width + self.__height) * 2
