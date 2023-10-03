@@ -3,11 +3,11 @@
 
 
 class LockedClass:
-    """Prevents the user from dynamically creating new instance attributes,
-    except if the new instance attribute is called first_name"""
+    """Prevents creating new instance attributes dynamically"""
 
     def __setattr__(self, name, value):
         if name == "first_name":
             self.__dict__[name] = value
         else:
-            raise AttributeError("object has no attribute")
+            raise AttributeError("'{}' object has no attribute '{}'"
+                                 .format(type(self).__name__, name))
