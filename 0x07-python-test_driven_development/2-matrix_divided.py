@@ -16,9 +16,9 @@ def matrix_divided(matrix, div):
         div (int || float): number used to divide by.
     """
     if (not isinstance(matrix, list) or
-            not all(isinstance(row, list) for row in matrix) or
-            not all((isinstance(element, int) or (isinstance(element, float)))
-                 for element in [n for row in matrix for n in row])):
+        not all(isinstance(row, list) for row in matrix)
+        or not all((isinstance(element, int) or (isinstance(element, float)))
+                   for element in [n for row in matrix for n in row])):
         raise TypeError("matrix must be a matrix (list of lists)"
                         " of integers/floats")
     if not all(len(row) == len(matrix[0]) for row in matrix):
