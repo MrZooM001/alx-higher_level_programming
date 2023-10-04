@@ -1,0 +1,46 @@
+The 3-say_my_name.py module
+==================================
+
+Using `` say_my_name(first_name, last_name) ``
+----------------------------
+::
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+    >>> say_my_name("Tom", "Cruise")
+    My name is Tom Cruise
+
+::
+    >>> say_my_name("", "Cruise")
+    My name is  Cruise
+
+::
+    >>> say_my_name(1, "Cruise")
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
+
+::
+    >>> say_my_name("Tom", 1)
+    Traceback (most recent call last):
+        ...
+    TypeError: last_name must be a string
+
+::
+    >>> say_my_name(None, "Bond")
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
+
+::
+    >>> say_my_name("James", None)
+    Traceback (most recent call last):
+        ...
+    TypeError: last_name must be a string
+
+::
+    >>> say_my_name('H', 'M')
+    My name is H M
+    
+    >>> say_my_name("Tom") # doctest: +NORMALIZE_WHITESPACE
+    My name is Tom  
+
+::

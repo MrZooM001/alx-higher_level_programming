@@ -1,0 +1,23 @@
+The 5-text_indentation.py module
+==================================
+
+Using `` text_indentation(text) ``
+----------------------------
+::
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+    >>> text_indentation("Question? A: The answer. Done")
+    Question?
+    <BLANKLINE>
+    A:
+    <BLANKLINE>
+    The answer.
+    <BLANKLINE>
+    Done
+
+::
+    >>> text_indentation(1)
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string
+
+::
