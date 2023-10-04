@@ -9,7 +9,7 @@ This supplies one function, add_integer(). For example:
 
 def add_integer(a, b=98):
     """Function that adds 2 integers.
-    
+
     Args:
         a (int): first operand.
         b (int): second operand with default value.
