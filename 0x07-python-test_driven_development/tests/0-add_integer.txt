@@ -37,6 +37,13 @@ Using `` add_integer(a, b=98) ``
     ValueError: could not convert string to float: 'b'
 
 ::
+
+    >>> add_integer(5, float('NaN'))
+    Traceback (most recent call last):
+        ...
+    ValueError: cannot convert float NaN to integer
+
+::
     >>> add_integer(5.0, 7.0)
     12
 
