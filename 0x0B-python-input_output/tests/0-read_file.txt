@@ -1,0 +1,20 @@
+The 0-read_file.py module
+==================================
+
+Using `` read_file(filename="") ``
+----------------------------
+::
+    >>> read_file = __import__('0-read_file').read_file
+
+::
+    >>> file = "./python_is"
+    >>> read_file(file)
+    fun
+
+::
+    >>> read_file("no_file")
+    Traceback (most recent call last):
+        ...
+    FileNotFoundError: [Errno 2] No such file or directory: 'no_file'
+
+::
