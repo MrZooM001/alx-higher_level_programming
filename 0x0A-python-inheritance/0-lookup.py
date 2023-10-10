@@ -26,6 +26,4 @@ def lookup(obj):
         obj (object): an object to get its attributes and methods.
     """
 
-
     return dir(obj)
-
