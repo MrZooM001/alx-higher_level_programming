@@ -25,6 +25,7 @@ def lookup(obj):
     Args:
         obj (object): an object to get its attributes and methods.
     """
+
+
     return dir(obj)
 
-print(lookup(int))
