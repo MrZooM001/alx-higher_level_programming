@@ -1,12 +1,11 @@
 The 7-base_geometry.py module
 ==================================
-
 ::
     >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 ::
     >>> bg = BaseGeometry()
-    >>> bg.integer_validator("my_int", 12)
+    >>> bg.integer_validator("name", 13)
 
 ::
     >>> bg = BaseGeometry()
@@ -42,5 +41,47 @@ The 7-base_geometry.py module
     Traceback (most recent call last):
         ...
     TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
+
+::
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator()
+    Traceback (most recent call last):
+        ...
+    TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+::
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("age", 3, 2023)
+    Traceback (most recent call last):
+        ...
+    TypeError: BaseGeometry.integer_validator() takes 3 positional arguments but 4 were given
+
+::
+    >>> bg = BaseGeometry()
+    >>> bg.area()
+    Traceback (most recent call last):
+        ...
+    Exception: area() is not implemented
+
+::
+    >>> bg = BaseGeometry()
+    >>> bg.area(6)
+    Traceback (most recent call last):
+        ...
+    TypeError: area() takes 1 positional argument but 2 were given
+
+::
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("name", False)
+    Traceback (most recent call last):
+        ...
+    TypeError: name must be an integer
+
+::
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator(None, None)
+    Traceback (most recent call last):
+        ...
+    TypeError: name must be an integer
 
 ::
