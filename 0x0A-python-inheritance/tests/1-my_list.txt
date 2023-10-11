@@ -1,10 +1,10 @@
 The 1-my_list.py module
 ==================================
 
-Using `` MyList.print_sorted(self) ``
-----------------------------
 ::
     >>> MyList = __import__('1-my_list').MyList
+
+::
     >>> my_list = MyList()
     >>> my_list.append(1)
     >>> my_list.append(4)
@@ -59,7 +59,7 @@ Using `` MyList.print_sorted(self) ``
     >>> my_list.append()
     Traceback (most recent call last):
         ...
-    TypeError: list.append() takes exactly one argument (0 given)
+    TypeError: append() takes exactly one argument (0 given)
 
 ::
     >>> my_list = MyList()
