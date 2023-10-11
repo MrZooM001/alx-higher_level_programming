@@ -1,8 +1,5 @@
 #!/usr/bin/python3
-"""Module that read a file.
-
-This supplies one function, read_file().
-"""
+"""Module for reading a file"""
 
 
 def read_file(filename=""):
@@ -10,8 +7,7 @@ def read_file(filename=""):
 
     Args:
         filename (str): file to be read.
-
     """
 
-    with open(filename, 'r', encoding="utf-8") as f:
-        print(f.read())
+    with open(filename, encoding="utf-8") as f:
+        print(f.read(), end="")

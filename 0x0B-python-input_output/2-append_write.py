@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-"""Module to write to a file"""
+"""Module that write to a file"""
 
 
-def write_file(filename="", text=""):
+def append_write(filename="", text=""):
     """Function that write a string to file.
 
     Args:
@@ -10,5 +10,5 @@ def write_file(filename="", text=""):
         text (str): text to be written.
     """
 
-    with open(filename, 'w', encoding="utf-8") as f:
+    with open(filename, 'a', encoding="utf-8") as f:
         return f.write(text)
