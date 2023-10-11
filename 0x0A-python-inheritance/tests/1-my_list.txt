@@ -16,7 +16,7 @@ Using `` MyList.print_sorted(self) ``
     >>> my_list = MyList(list)
     Traceback (most recent call last):
         ...
-    TypeError: MyList.__init__() takes 1 positional argument but 2 were given
+    TypeError: 'type' object is not iterable
 
 ::
     >>> my_list = MyList()
