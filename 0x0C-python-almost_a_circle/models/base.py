@@ -90,10 +90,10 @@ class Base:
         Args:
             cls (class): class object
         """
-        json_file = str("{}.json".format(cls.__name__))
-        with open(json_file, "r", encoding="utf-8") as file:
-            try:
+        json_file = "{}.json".format(str(cls.__name__))
+        try:
+            with open(json_file, "r", encoding="utf-8") as file:
                 list_insta = Base.from_json_string(file.read())
                 return [cls.create(**ls) for ls in list_insta]
-            except IOError:
-                return []
+        except IOError:
+            return []
