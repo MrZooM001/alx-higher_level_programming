@@ -23,25 +23,25 @@ class Rectangle(Base):
             y (int): y axis of rectangle
         """
         super().__init__(id)
-        if not isinstance(width, int):
+        if type(width) != int:
             raise TypeError("width must be an integer")
         if width <= 0:
             raise ValueError("width must be > 0")
         self.__width = width
 
-        if not isinstance(height, int):
+        if type(height) != int:
             raise TypeError("height must be an integer")
         if height <= 0:
             raise ValueError("height must be > 0")
         self.__height = height
 
-        if not isinstance(x, int):
+        if type(x) != int:
             raise TypeError("x must be an integer")
         if x < 0:
             raise ValueError("x must be >= 0")
         self.__x = x
 
-        if not isinstance(y, int):
+        if type(y) != int:
             raise TypeError("y must be an integer")
         if y < 0:
             raise ValueError("y must be >= 0")
@@ -59,7 +59,7 @@ class Rectangle(Base):
         Args:
             value (int): value passed to set as new width
         """
-        if not isinstance(value, int):
+        if type(value) != int:
             raise TypeError("width must be an integer")
         if value <= 0:
             raise ValueError("width must be > 0")
@@ -77,7 +77,7 @@ class Rectangle(Base):
         Args:
             value (int): value passed to set as new height
         """
-        if not isinstance(value, int):
+        if type(value) != int:
             raise TypeError("width must be an integer")
         if value <= 0:
             raise ValueError("width must be > 0")
@@ -95,7 +95,7 @@ class Rectangle(Base):
         Args:
             value (int): value passed to set as new x
         """
-        if not isinstance(value, int):
+        if type(value) != int:
             raise TypeError("x must be an integer")
         if value < 0:
             raise ValueError("x must be >= 0")
@@ -113,7 +113,7 @@ class Rectangle(Base):
         Args:
             value (int): value passed to set as new y
         """
-        if not isinstance(value, int):
+        if type(value) != int:
             raise TypeError("y must be an integer")
         if value < 0:
             raise ValueError("y must be >= 0")
