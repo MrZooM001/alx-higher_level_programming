@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Module to define a base class"""
 import json
+import csv
 
 
 class Base:
@@ -95,5 +96,53 @@ class Base:
             with open(json_file, "r", encoding="utf-8") as file:
                 list_insta = Base.from_json_string(file.read())
                 return [cls.create(**ls) for ls in list_insta]
+        except IOError:
+            return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """class method that serializes (save) to a CSV file
+
+        Args:
+            cls (class): class object
+            list_objs (list): list of objects to be saved in a csv file
+        """
+        file_name = "{}.csv".format(str(cls.__name__))
+        with open(file_name, 'w', newline="", encoding="utf-8") as csv_file:
+            if list_objs is None or list_objs == []:
+                csv_file.write("[]")
+            else:
+                if cls.__name__ == "Rectangle":
+                    field_names = ["id", "width", "height", "x", "y"]
+                else:
+                    field_names = ["id", "size", "x", "y"]
+
+                csv_writer = csv.DictWriter(csv_file, fieldnames=field_names)
+                [csv_writer.writerow(obj.to_dictionary()) for obj in list_objs]
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """class method that deserializes (load) from a CSV file
+
+        Args:
+            cls (class): class object
+        """
+        file_name = "{}.csv".format(str(cls.__name__))
+        try:
+            with open(file_name, 'r', newline="", encoding="utf-8") as csv_f:
+                if cls.__name__ == "Rectangle":
+                    field_names = ["id", "width", "height", "x", "y"]
+                else:
+                    field_names = ["id", "size", "x", "y"]
+
+                csv_reader = csv.DictReader(csv_f, fieldnames=field_names)
+                new_reader = []
+                for dictionary in csv_reader:
+                    new_dictionary = {}
+                    for key, value in dictionary.items():
+                        new_dictionary[key] = int(value)
+                    new_reader.append(new_dictionary)
+                csv_reader = new_reader
+                return [cls.create(**obj) for obj in csv_reader]
         except IOError:
             return []
