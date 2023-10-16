@@ -90,7 +90,7 @@ class Base:
         Args:
             cls (class): class object
         """
-        json_file = ("{}.json".format(cls.__name__))
+        json_file = str("{}.json".format(cls.__name__))
         with open(json_file, "r", encoding="utf-8") as file:
             try:
                 list_insta = Base.from_json_string(file.read())
