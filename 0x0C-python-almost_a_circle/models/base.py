@@ -157,12 +157,14 @@ class Base:
             list_squares (class): class object
         """
         turtle.Screen().setup(1280, 720, startx=60, starty=60)
+        colors = ['#F44336', '#E91E63', '#3F51B5', '#009688', '#C0CA33',
+                  '#FBC02D', '#F4511E', '#673AB7', '#607D8B']
         for rect in list_rectangles:
             turtle.penup()
             if rect.x is not None or rect.y is not None:
                 turtle.goto(rect.y, rect.x)
             turtle.pendown()
-            turtle.color('#E91E63')
+            turtle.color(random.sample(colors, 1))
             turtle.pensize(1.5)
             turtle.showturtle()
             turtle.begin_fill()
@@ -183,13 +185,12 @@ class Base:
             turtle.left(120)
             turtle.forward(60)
             turtle.pendown()
-
         for squar in list_squares:
             turtle.penup()
             if squar.x is not None or squar.y is not None:
                 turtle.goto(squar.y, squar.x)
             turtle.pendown()
-            turtle.color('#C0CA33')
+            turtle.color(random.sample(colors, 1))
             turtle.pensize(1.5)
             turtle.showturtle()
             turtle.begin_fill()
