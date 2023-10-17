@@ -146,3 +146,68 @@ class Base:
                 return [cls.create(**obj) for obj in csv_reader]
         except IOError:
             return []
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """static method that opens a window
+        and draws all the Rectangles and Squares
+
+        Args:
+            list_rectangles (class): class object
+            list_squares (class): class object
+        """
+        turtle.Screen().setup(1280, 720, startx=60, starty=60)
+        for rect in list_rectangles:
+            turtle.penup()
+            if rect.x is not None or rect.y is not None:
+                turtle.goto(rect.y, rect.x)
+            turtle.pendown()
+            turtle.color('#E91E63')
+            turtle.pensize(1.5)
+            turtle.showturtle()
+            turtle.begin_fill()
+            for i in range(2):
+                if i == 0:
+                    turtle.penup()
+                    turtle.forward(144)
+                    turtle.pendown()
+                turtle.left(-90)
+                turtle.shape("circle")
+                turtle.forward(rect.width)
+                turtle.left(-90)
+                turtle.shape("triangle")
+                turtle.forward(rect.height)
+            turtle.end_fill()
+            turtle.hideturtle()
+            turtle.penup()
+            turtle.left(120)
+            turtle.forward(60)
+            turtle.pendown()
+
+        for squar in list_squares:
+            turtle.penup()
+            if squar.x is not None or squar.y is not None:
+                turtle.goto(squar.y, squar.x)
+            turtle.pendown()
+            turtle.color('#C0CA33')
+            turtle.pensize(1.5)
+            turtle.showturtle()
+            turtle.begin_fill()
+            for i in range(2):
+                if i == 0:
+                    turtle.penup()
+                    turtle.forward(-144)
+                    turtle.pendown()
+                turtle.left(-90)
+                turtle.shape("square")
+                turtle.forward(squar.width)
+                turtle.left(-90)
+                turtle.shape("turtle")
+                turtle.forward(squar.height)
+            turtle.end_fill()
+            turtle.hideturtle()
+            turtle.penup()
+            turtle.left(-90)
+            turtle.forward(-90)
+            turtle.pendown()
+        turtle.exitonclick()
