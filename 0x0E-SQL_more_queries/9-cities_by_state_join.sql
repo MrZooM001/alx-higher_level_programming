@@ -1,4 +1,4 @@
 -- a script that lists all cities contained in the database hbtn_0d_usa.
-SELECT `id`, `name`, `st.name` FROM `cities`
-NATURAL JOIN `states` AS st
-ORDER BY `id`;
+SELECT `cities.id`, `cities.name`, `states.name` FROM `cities`
+LEFT JOIN `states` ON state_id = cities.state_id
+ORDER BY `cities.id`;
