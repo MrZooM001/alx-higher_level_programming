@@ -19,3 +19,7 @@
 * **[11. Second biggest!](./11-second_biggest.js)** &nbsp; → &nbsp; a script that searches the second biggest integer in the list of arguments.
 * **[12. Object](./12-object.js)** &nbsp; → &nbsp; replace the value 12 with 89 in a script.
 * **[13. Add file](./13-add.js)** &nbsp; → &nbsp; a function that returns the addition of 2 integers.
+* **[14. Const or not const](./100-let_me_const.js)** &nbsp; → &nbsp; a file that modifies the value of myVar to 333.
+* **[15. Call me Moby](./101-call_me_moby.js)** &nbsp; → &nbsp; a function that executes x times a function.
+* **[16. Add me maybe](./102-add_me_maybe.js)** &nbsp; → &nbsp; a function that increments and calls a function.
+* **[17. Increment object](./103-object_fct.js)** &nbsp; → &nbsp; adding a new function incr that increments the integer value in a script.
