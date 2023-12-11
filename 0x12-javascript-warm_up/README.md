@@ -11,3 +11,11 @@
 * **[3. Value of my argument](./3-value_argument.js)** &nbsp; → &nbsp; a script that prints the first argument passed to it. 
 * **[4. Create a sentence](./4-concat.js)** &nbsp; → &nbsp; a script that prints two arguments passed to it, in the following format: “ is ”.
 * **[5. An Integer](./5-to_integer.js)** &nbsp; → &nbsp; a script that prints &nbsp; ` My number: <first argument converted in integer> ` &nbsp; if the first argument can be converted to an integer.
+* **[6. Loop to languages](./6-multi_languages_loop.js)** &nbsp; → &nbsp; a script that prints 3 lines: (like ` 1-multi_languages.js `) but by using an array of string and a loop.
+* **[7. I love C](./7-multi_c.js)** &nbsp; → &nbsp; a script that prints x times “C is fun”.
+* **[8. Square](./8-square.js)** &nbsp; → &nbsp; a script that prints a square.
+* **[9. Add](./9-add.js)** &nbsp; → &nbsp; a script that prints the addition of 2 integers.
+* **[10. Factorial](./10-factorial.js)** &nbsp; → &nbsp; a script that computes and prints a factorial.
+* **[11. Second biggest!](./11-second_biggest.js)** &nbsp; → &nbsp; a script that searches the second biggest integer in the list of arguments.
+* **[12. Object](./12-object.js)** &nbsp; → &nbsp; replace the value 12 with 89 in a script.
+* **[13. Add file](./13-add.js)** &nbsp; → &nbsp; a function that returns the addition of 2 integers.
