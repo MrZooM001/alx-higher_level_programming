@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-"""Module to list all states with a name starting with N (upper N)
-from the database hbtn_0e_0_usa"""
+"""Module to takes in an argument and displays all values
+in the states table of hbtn_0e_0_usa where name matches the argument,
+and safe from MySQL injections"""
 
 
 import MySQLdb
@@ -14,7 +15,8 @@ if __name__ == "__main__":
         database=argv[3], charset="utf8")
 
     with connection.cursor() as cur:
-        cur.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY states.id")
+        sql_query = "SELECT * FROM states WHERE name = %s ORDER BY states.id"
+        cur.execute(sql_query, (argv[4],))
         query_rows = cur.fetchall()
 
         for row in query_rows:

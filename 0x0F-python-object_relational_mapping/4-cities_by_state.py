@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-"""Module to list all states with a name starting with N (upper N)
-from the database hbtn_0e_0_usa"""
+"""Module that lists all cities from the database hbtn_0e_4_usa"""
 
 
 import MySQLdb
@@ -14,7 +13,11 @@ if __name__ == "__main__":
         database=argv[3], charset="utf8")
 
     with connection.cursor() as cur:
-        cur.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY states.id")
+        sql_query = """SELECT cities.id, cities.name, state.name FROM cities
+            LEFT JOIN states AS state
+            ON state.id = cities.state_id
+            ORDER BY cities.id"""
+        cur.execute(sql_query)
         query_rows = cur.fetchall()
 
         for row in query_rows:
