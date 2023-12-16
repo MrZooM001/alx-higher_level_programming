@@ -7,14 +7,12 @@ if __name__ == "__main__":
     import MySQLdb
     from sys import argv
 
-    connection = MySQLdb.connect(
-        host="localhost", port=3306,
-        user=argv[1], passwd=argv[2],
-        database=argv[3], charset="utf8")
+    connection = MySQLdb.connect(host="localhost",
+                                 user=argv[1], passwd=argv[2],
+                                 database=argv[3], port=3306)
 
     with connection.cursor() as cur:
-        sql_query = """SELECT * FROM states WHERE name 
-        LIKE BINARY '{}' ORDER BY states.id"""
+        sql_query = "SELECT * FROM states WHERE name LIKE BINARY '{}'"
         cur.execute(sql_query.format(argv[4]))
         query_rows = cur.fetchall()
 
