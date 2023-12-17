@@ -13,3 +13,8 @@
 * **[8. First state](./8-model_state_fetch_first.py)** &nbsp; → &nbsp; a script that prints the first `State` object from the database `hbtn_0e_6_usa`
 * **[9. Contains `a`](./9-model_state_filter_a.py)** &nbsp; → &nbsp; a script that lists all `State` objects that contain the letter `a` from the database `hbtn_0e_6_usa`
 * **[10. Get a state](./10-model_state_my_get.py)** &nbsp; → &nbsp; a script that prints the `State` object with the `name` passed as argument from the database `hbtn_0e_6_usa`
+* **[11. Add a new state](./11-model_state_insert.py)** &nbsp; → &nbsp; a script that adds the `State` object “Louisiana” to the database `hbtn_0e_6_usa`
+* **[12. Update a state](./12-model_state_update_id_2.py)** &nbsp; → &nbsp; a script that changes the name of a `State` object from the database `hbtn_0e_6_usa`
+* **[13. Delete states](./13-model_state_delete_a.py)** &nbsp; → &nbsp; a script that deletes all `State` objects with a name containing the letter `a` from the database `hbtn_0e_6_usa`
+* **[14. Cities in state (Model)](./14-model_city_fetch_by_state.py)** &nbsp; → &nbsp; a script that prints all `City` objects from the database `hbtn_0e_14_usa`
+* **[14. Cities in state (Script)](./model_city.py)** &nbsp; → &nbsp; a Python file that contains the class definition of a `City` and inherits from `Base` (imported from `model_state`)
