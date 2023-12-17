@@ -1,7 +1,7 @@
 # ***Project*** &nbsp; → &nbsp; **0x0F. Python - Object-relational mapping** <br />
 ***Scope*** &nbsp; → &nbsp; ` Python ` ` OOP ` ` SQL ` ` MySQL ` ` ORM ` ` SQLAlchemy ` <br />
 
-* ## ***Tasks***
+* ## ***Mandatory Tasks***
 * **[0. Get all states](./0-select_states.py)** &nbsp; → &nbsp; a script that lists all `states` from the database `hbtn_0e_0_usa` .
 * **[1. Filter states](./1-filter_states.py)** &nbsp; → &nbsp; a script that lists all `states` with a `name` starting with `N` (upper N) from the database `hbtn_0e_0_usa` .
 * **[2. Filter states by user input](./2-my_filter_states.py)** &nbsp; → &nbsp; a script that takes in an argument and displays all values in the `states` table of `hbtn_0e_0_usa` where `name` matches the argument.
@@ -18,3 +18,12 @@
 * **[13. Delete states](./13-model_state_delete_a.py)** &nbsp; → &nbsp; a script that deletes all `State` objects with a name containing the letter `a` from the database `hbtn_0e_6_usa`
 * **[14. Cities in state (Model)](./14-model_city_fetch_by_state.py)** &nbsp; → &nbsp; a script that prints all `City` objects from the database `hbtn_0e_14_usa`
 * **[14. Cities in state (Script)](./model_city.py)** &nbsp; → &nbsp; a Python file that contains the class definition of a `City` and inherits from `Base` (imported from `model_state`)
+<br />
+
+* ## ***Advanced Tasks***
+* **[15. City relationship (script)](./100-relationship_states_cities.py)** &nbsp; → &nbsp;  a script that creates the `State` “California” with the `City` “San Francisco” from the database `hbtn_0e_100_usa`
+* **[15. City relationship (Model)](./relationship_state.py)** &nbsp; → &nbsp;  Improved model based on `model_state.py` with a represented relationship with class `City`
+* **[15. City relationship (Model)](./relationship_city.py)** &nbsp; → &nbsp;  Improved model based on `model_city.py`
+
+* **[16. List relationship](./101-relationship_states_cities_list.py)** &nbsp; → &nbsp;  a script that lists all `State` objects, and corresponding `City` objects, contained in the database `hbtn_0e_101_usa`
+* **[17. From city](./102-relationship_cities_states_list.py)** &nbsp; → &nbsp;  a script that lists all `City` objects from the database `hbtn_0e_101_usa`
