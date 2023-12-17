@@ -19,6 +19,6 @@ if __name__ == '__main__':
     selected_state = session.query(State).where(State.name.contains('a'))
     for state in selected_state:
         session.delete(state)
-        session.commit()
 
+    session.commit()
     session.close()
