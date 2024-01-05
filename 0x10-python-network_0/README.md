@@ -10,3 +10,5 @@
 * **[5. cURL POST parameters](./5-post_params.sh)**
 * **[6. Find a peak (Python Script)](./6-peak.py)**
 * **[6. Find a peak (Text File)](./6-peak.txt)**
+* **[7. Only status code)](./100-status_code.sh)**
+* **[8. cURL a JSON file)](./101-post_json.sh)**
