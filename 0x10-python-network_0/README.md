@@ -12,3 +12,4 @@
 * **[6. Find a peak (Text File)](./6-peak.txt)**
 * **[7. Only status code)](./100-status_code.sh)**
 * **[8. cURL a JSON file)](./101-post_json.sh)**
+* **[9. Catch me if you can!)](./102-catch_me.sh)**
