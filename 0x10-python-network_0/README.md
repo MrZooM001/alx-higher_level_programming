@@ -6,3 +6,5 @@
 * **[1. cURL to the end](./1-body.sh)**
 * **[2. cURL Method](./2-delete.sh)**
 * **[3. cURL only methods](./3-methods.sh)**
+* **[4. cURL headers](./4-header.sh)**
+* **[5. cURL POST parameters](./5-post_params.sh)**
