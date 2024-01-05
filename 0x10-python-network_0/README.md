@@ -8,3 +8,5 @@
 * **[3. cURL only methods](./3-methods.sh)**
 * **[4. cURL headers](./4-header.sh)**
 * **[5. cURL POST parameters](./5-post_params.sh)**
+* **[6. Find a peak (Python Script)](./6-peak.py)**
+* **[6. Find a peak (Text File)](./6-peak.txt)**
