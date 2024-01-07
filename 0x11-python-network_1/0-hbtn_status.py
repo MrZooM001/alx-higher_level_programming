@@ -9,6 +9,6 @@ if __name__ == "__main__":
     with urlopen(req) as respo:
         response = respo.read()
         print("Body response:")
-        print("\t- type: {}".format(type(response)).expandtabs(4))
-        print("\t- content: {}".format(response).expandtabs(4))
-        print("\t- utf8 content: {}".format(response.decode('utf-8')).expandtabs(4))
+        print("\t- type: {}".format(type(response)))
+        print("\t- content: {}".format(response))
+        print("\t- utf8 content: {}".format(response.decode('utf-8')))

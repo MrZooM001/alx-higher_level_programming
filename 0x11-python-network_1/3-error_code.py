@@ -10,9 +10,9 @@ if __name__ == "__main__":
     url = argv[1]
     req = Request(url)
     try:
-        response = urlopen(req)
+        with urlopen(req) as respo:
+            response = respo.read()
+            print(response.decode('utf-8'))
     except HTTPError as ex:
         if hasattr(ex, 'code'):
             print('Error code: {}'.format(ex.code))
-    else:
-        print(response.read())
