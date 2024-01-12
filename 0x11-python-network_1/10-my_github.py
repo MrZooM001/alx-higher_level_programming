@@ -7,10 +7,8 @@ from sys import argv
 
 if __name__ == "__main__":
     url = "https://api.github.com/user"
-    response = requests.post(url, auth=(argv[1], argv[2]))
-    res_json = response.json()
     try:
-        response = requests.post(url, auth=(argv[1], argv[2]))
+        response = requests.get(url, auth=(argv[1], argv[2]))
         res_json = response.json()
         print(res_json['id'])
     except Exception:
