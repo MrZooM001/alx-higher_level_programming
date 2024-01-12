@@ -7,13 +7,13 @@ from sys import argv
 
 if __name__ == "__main__":
     url = "http://0.0.0.0:5000/search_user"
-    payload = {'q': (argv[1] if (len(argv) == 2) else "") }
+    payload = {'q': (argv[1] if (len(argv) > 1) else "")}
     response = requests.post(url=url, data=payload)
     try:
         res_json = response.json()
-        if res_json == {}:
+        if len(res_json) == 0:
             print('No result')
         else:
-            print("[{}] {}".format(res_json.get('id'), res_json.get('name')))
-    except ValueError:
+            print("[{}] {}".format(res_json['id'], res_json['name']))
+    except Exception:
         print("Not a valid JSON")
