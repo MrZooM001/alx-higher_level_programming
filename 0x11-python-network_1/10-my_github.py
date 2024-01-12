@@ -10,6 +10,8 @@ if __name__ == "__main__":
     response = requests.post(url, auth=(argv[1], argv[2]))
     res_json = response.json()
     try:
+        response = requests.post(url, auth=(argv[1], argv[2]))
+        res_json = response.json()
         print(res_json['id'])
     except Exception:
         print("None")
